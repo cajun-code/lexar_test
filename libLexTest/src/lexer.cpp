@@ -80,7 +80,7 @@ void Lexer::processTokens(istream &inFile, ostream &outFile){
                 //check for SCHEMES, FACTS, RULES, QUERIES
                 string tempString = "";
                 startofword = column;
-                while (isalnum(inFile.peek())) {
+                while (isalnum(inFile.peek()) || inFile.peek() == '_' ) {
                     tempString += c;
                     inFile.get(c);
                     column++;
