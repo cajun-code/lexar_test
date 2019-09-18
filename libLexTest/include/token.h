@@ -14,8 +14,12 @@ public:
     virtual ~Token();
 
     std::string toString();
-    
-
+    int getLineNumber(){return line_number;}
+    int getColumnNumber(){return column_number;}
+    void setTokenType(TOKEN_TYPE tokenType){this->type = tokenType;}
+    TOKEN_TYPE getTokenType(){return type;}
+    void setValue(std::string value){this->value = value;}
+    std::string getValue(){return value;}
 private:
     int line_number;
     int column_number;
